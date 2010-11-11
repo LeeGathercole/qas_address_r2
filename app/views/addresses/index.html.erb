@@ -1,0 +1,9 @@
+<h1>Listing addresses</h1>
+
+
+<% form_tag("/addresses/search" , :method => "get") do %>
+  <%= label_tag("Post Code:") %>
+  <%= text_field_tag(:postcode) %>
+  <%= submit_tag("Search") %>
+<% end %>
+

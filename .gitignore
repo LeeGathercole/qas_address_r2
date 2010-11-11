@@ -1,0 +1,26 @@
+.DS_Store
+config/settings.yml
+config/database.yml
+db/schema.rb
+
+# Database backups created using the db:download and db:import capistrano tasks
+db/backups
+
+# Auto generated docs (rake doc:app, doc:guides and doc:plugins)
+doc/app
+doc/guides
+doc/plugins
+
+# Gem bundler
+gems
+
+log/*
+!log/.gitignore
+
+tmp/*
+!tmp/.gitignore
+
+/.bundle
+
+# Cucumber re-run file
+features.txt

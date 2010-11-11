@@ -1,0 +1,58 @@
+<h1>Search Results for <%params[:postcode]%></h1>
+
+<h1>QAS Output</h1>
+
+<table>
+  <tr>
+    <td>Address Line 1</td>
+    <td><%=@qasaddress.addressline1%></td>
+  </tr>
+  <tr>
+    <td>Address Line 2</td>
+    <td><%=@qasaddress.addressline2%></td>
+  </tr>
+  <tr>
+    <td>Town</td>
+    <td><%=@qasaddress.town%></td>
+  </tr>
+  <tr>
+    <td>Post Code</td>
+    <td><%=@qasaddress.postcode%></td>
+  </tr>
+  <tr>
+    <td>Is Organisation</td>
+    <td><%=@qasaddress.isorganisation%></td>
+  </tr>
+</table>
+
+
+<h1>Formatted Intraship Output</h1>
+
+<table>
+  <tr>
+    <td>Organisation</td>
+    <td><%=@formattedaddress.organisation%></td>
+  </tr>
+  <tr>
+    <td>Property No</td>
+    <td><%=@formattedaddress.propertyno%></td>
+  </tr>
+  <tr>
+    <td>Street Name</td>
+    <td><%=@formattedaddress.streetname%></td>
+  </tr>
+  <tr>
+    <td>Address Line 3</td>
+    <td><%=@formattedaddress.addressline3%></td>
+  </tr>
+  <tr>
+    <td>Town</td>
+    <td><%=@formattedaddress.town%></td>
+  </tr>
+  <tr>
+    <td>Post Code</td>
+    <td><%=@formattedaddress.postcode%></td>
+  </tr>
+</table>
+
+<%=link_to "Search Again", "/addresses"%>

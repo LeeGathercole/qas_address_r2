@@ -1,0 +1,16 @@
+<h1>Search Results for <%=params[:postcode]%></h1>
+
+<table>
+  <tr>
+    <th>Address Line</th>
+    <th/>
+  </tr>
+<%@pickList.each do |picklistEntry| %>
+  <tr>
+    <td><%=picklistEntry[:picklist]%></td>
+    <td><%=link_to "select", "/addresses/" + picklistEntry[:moniker] + "/get"%></td>
+  </tr>
+<%end%>
+</table>
+
+<%=link_to "Search Again", "/addresses"%>
