@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'addresses/search', :controller=> 'addresses', :action => 'search'
   map.connect 'addresses/:moniker/get', :controller => "addresses", :action => "getaddress" , :constraints => { :moniker => /[^\/]*/ }
   map.resources :addresses
+  map.resources :emailer
 
 
   # Sample of regular route:
