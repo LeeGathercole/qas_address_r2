@@ -1,4 +1,4 @@
 development:
   :qas_address: "http://10.0.83.69:2021/proweb.wsdl"
 sit:
-  :qas_address: "http://10.0.83.69.2021/proweb.wsdl"
+  :qas_address: "http://10.0.83.69:2021/proweb.wsdl"
