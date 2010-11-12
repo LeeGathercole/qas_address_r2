@@ -24,3 +24,5 @@ tmp/*
 
 # Cucumber re-run file
 features.txt
+
+.redcar
