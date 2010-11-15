@@ -4,7 +4,7 @@ set :stages, %w(sit production testing)
 set :default_stage, "testing"
 require 'capistrano/ext/multistage'
 require 'capistrano/logger'
-#require "bundler/capistrano"
+require "bundler/capistrano"
 
 #Log output of last deployment to file
 output = File.new('capistrano.log',"w+")
