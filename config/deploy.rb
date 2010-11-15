@@ -4,8 +4,7 @@ set :stages, %w(sit production testing)
 set :default_stage, "testing"
 require 'capistrano/ext/multistage'
 require 'capistrano/logger'
-require 'hoptoad_notifier/capistrano'
-require "bundler/capistrano"
+#require "bundler/capistrano"
 
 #Log output of last deployment to file
 output = File.new('capistrano.log',"w+")
@@ -25,10 +24,8 @@ before "bundle:install", "deploy:install_bundler"
 after "deploy", "deploy:mark_revision"
 before "deploy", "deploy:set_permissions"
 
-after "deploy", "tester"
-
 #check works for rollbacks
-#after "deploy:rollback", "deploy:mark_revision"
+after "deploy:rollback", "deploy:mark_revision"
 
 #after "deploy", "git:tag_branch"
 
@@ -72,7 +69,7 @@ namespace :deploy do
     run "cd #{current_path} && rake themes:cache:update"
   end
 
-  set :bundler_ver, '1.0.2'
+  set :bundler_ver, '1.0.3'
   desc "installs bundler"
   task :install_bundler, :roles => :app do
     run "#{try_sudo} ls"

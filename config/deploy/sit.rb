@@ -8,21 +8,23 @@ set :deploy_via, :copy
 set :copy_exclude, [".git/*", ".svn/*"]
 set :env , 'sit'
 
-set :branch do
+set :branch, "master"
 
-  branches=`git branch -r | sed "1 d"`.split
-  branches.map { | b | b.gsub!("origin/","") }
-  branches.delete_if { |b| b.match("^master|feature|develop") }
+#set :branch do
 
-  puts "What branch would you like to deploy from?"
-  branches.each_index do | i |
-    puts((i+1).to_s + ": " + branches[i])
-  end
+#  branches=`git branch -r | sed "1 d"`.split
+#  branches.map { | b | b.gsub!("origin/","") }
+#  branches.delete_if { |b| b.match("^master|feature|develop") }
 
-  begin
-    branch_index = Capistrano::CLI.ui.ask('Branch to deploy from?:').to_i
-  end until (1..branches.size).include?(branch_index)
+#  puts "What branch would you like to deploy from?"
+#  branches.each_index do | i |
+#    puts((i+1).to_s + ": " + branches[i])
+#  end
 
-  branches[branch_index-1]
+#  begin
+#    branch_index = Capistrano::CLI.ui.ask('Branch to deploy from?:').to_i
+#  end until (1..branches.size).include?(branch_index)
 
-end
+#  branches[branch_index-1]
+
+#end
